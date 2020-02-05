@@ -24,9 +24,9 @@ if (!class_exists('OLE_PPS')) {
     require_once 'OLE/PPS.php';
 }
 
-if (!class_exists('System')) {
-    require_once 'System.php';
-}
+// if (!class_exists('System')) {
+//     require_once 'System.php';
+// }
 
 /**
 * Class for creating File PPS's for OLE containers
@@ -52,8 +52,8 @@ class OLE_PPS_File extends OLE_PPS
     */
     function __construct($name)
     {
-        $system = new System();
-        $this->_tmp_dir = $system->tmpdir();
+        // $system = new System();
+        // $this->_tmp_dir = $system->tmpdir();
         parent::__construct(
             null, 
             $name,

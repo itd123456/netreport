@@ -4,7 +4,7 @@
 	{
 		private $host = "localhost";
 		private $user = "network";
-		private $pass = "P@$$w0rd2020!";
+		private $pass = 'P@$$w0rd2020!';
 		private $db = "network";
 		private $conn;
 
