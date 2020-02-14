@@ -355,6 +355,15 @@
 
 			return $result;
 		}
+
+		public function getBranch($sql)
+		{
+			$stmt = $this->conn->prepare($sql);
+			$stmt->execute();
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+			print json_encode($result);
+		}
 	}
 	
 ?>

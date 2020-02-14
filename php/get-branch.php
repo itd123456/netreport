@@ -5,8 +5,7 @@
 	$database = new Database();
 
 	$sql = "SELECT *
-			FROM branch";	
+			FROM branch";
 
-	$database->fetchAll($sql, 'nottime');
-
+	$database->getBranch($sql);
 ?>

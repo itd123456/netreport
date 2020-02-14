@@ -3,34 +3,39 @@ $(document).ready(function()
 {
   var t =  $('#dataTable').DataTable();
 
-  $.ajax(
-  	{
-  		type : "POST",
-  		url : './php/get-branches.php',
-  		dataType : "",
-  		success : function(data)
-  		{
-  			var branches = JSON.parse(data);
-  			var len = branches.length;
-  			for (var i = 0; i < len; i++)
-  			{
-  				id = branches[i]['id'];
-  				branch = branches[i]['branch'];
+  var data = ['Antipolo', 'Bacolod', 'Baguio', 'Baler', 'Baliuag', 'Bataan', 'Batangas', 'Benguet',
+            'Bohol', 'Bukidnon','Bulacan', 'Butuan', 'Cabanatuan', 'Cagayan De Oro', 'Cainta',
+'Calamba', 'Capiz', 'Cauayan', 'Cavite', 'Cebu', 'Consolacion', 'Dagupan', 'Dau',
+                 'Davao', 'Digos', 'Digos City', 'Digos Trike', 'Dumaguete', 'Gapan', 'General Santos',
+'Harrison Plaza', 'Head Office', 'Ilocos Norte', 'Iloilo', 'Imus', 'Intramuros',
+'Isabela', 'Kabankalan', 'Kidapawan', 'Koronadal', 'La Trinidad', 'La Union', 'Lagro',
+'Laguna', 'Laoag', 'Las Piñas', 'Lipa', 'Makati', 'Malaybalay', 'Malolos', 'Mandaluyong',
+'Mandaue', 'Manila', 'Marikina', 'MBL', 'Meycauayan', 'Muntinlupa', 'Naga',
+'Negros Occidental', 'Negros Oriental', 'Nueva Ecija', 'Olongapo', 'Pampanga',
+'Paranaque', 'Pasay', 'Pasig', 'POEA', 'Quezon Avenue', 'Quezon City', 'Roxas',
+'San Fernando PA', 'San Jose', 'San Mateo', 'San Pablo', 'Santiago', 'SC Koronadal',
+'SC Panabo', 'SME Antipolo', 'SME Marikina', 'Tacloban', 'Tagbilaran', 'Tagum',
+'Talavera', 'Tanay', 'Tandang Sora', 'Tarlac', 'Tuguegarao', 'Tuguegarao City',
+'Valencia','Valenzuela'];
 
-  				$('#branch').append($('<option>', {value:id, text:branch}));
-  				$('#edit_branch').append($('<option>', {value:id, text:branch}));
-  			}
-  		}
-  	});
+	var len = data.length;
+
+	for (i = 0; i < len; i++)
+	{
+		var id = i + 1;
+		var branch = data[i];
+			
+		$('#branch').append($('<option>', {value:id, text:branch}));
+		$('#edit_branch').append($('<option>', {value:id, text:branch}));
+	}
 
   $.ajax(
   	{
   		type : "POST",
   		url : './php/get-providers.php',
-  		dataType : "",
+  		dataType : "json",
   		success : function(data)
   		{
-  			data = $.parseJSON(data);
   			len = data.length;
   			
   			for (i = 0; i < len; i++)
@@ -72,7 +77,7 @@ $(document).ready(function()
   	{
   		type : "POST",
   		url : './php/get-data.php',
-  		data : {stat : false},
+  		data : {stat : 0},
   		dataType : "json",
   		success : function(data)
   		{
@@ -213,7 +218,10 @@ $('#add_data').on('click',function()
 	started = $('#date').val() + ' ' + $('#time').val() + ':00';
 	status = $('#status').val();
 	remarks = $('#remarks').val();
-
+	if (!ticket)
+	{
+		ticket = 'No Ticket';
+	}
 	data = 
 	{
 		branch : branch,

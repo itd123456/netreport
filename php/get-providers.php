@@ -8,5 +8,4 @@
 			FROM provider";
 
 	$database->fetchAll($sql, 'providers');
-
 ?>
