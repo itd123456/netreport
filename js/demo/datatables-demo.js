@@ -16,7 +16,8 @@ $(document).ready(function()
 'San Fernando PA', 'San Jose', 'San Mateo', 'San Pablo', 'Santiago', 'SC Koronadal',
 'SC Panabo', 'SME Antipolo', 'SME Marikina', 'Tacloban', 'Tagbilaran', 'Tagum',
 'Talavera', 'Tanay', 'Tandang Sora', 'Tarlac', 'Tuguegarao', 'Tuguegarao City',
-'Valencia','Valenzuela', 'Cubao', 'Lucena', 'Cogon(Cebu)','Calbayog', 'Ormoc' ];
+'Valencia','Valenzuela', 'Cubao', 'Lucena', 'Cogon(Cebu)','Calbayog', 'Ormoc', 'Urdaneta', 'Malabon', 'Vigan', 'Lapu-Lapu',
+'Kalibo', 'Buhangin', 'Talisay', 'SC Gensan', 'San Francisco', 'Bacoor', 'Antique', 'San Jose Delm Nonte', 'General Trias', 'Taguig'];
 
 	var len = data.length;
 
