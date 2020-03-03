@@ -16,7 +16,7 @@ $(document).ready(function()
 'San Fernando PA', 'San Jose', 'San Mateo', 'San Pablo', 'Santiago', 'SC Koronadal',
 'SC Panabo', 'SME Antipolo', 'SME Marikina', 'Tacloban', 'Tagbilaran', 'Tagum',
 'Talavera', 'Tanay', 'Tandang Sora', 'Tarlac', 'Tuguegarao', 'Tuguegarao City',
-'Valencia','Valenzuela'];
+'Valencia','Valenzuela', 'Cubao', 'Lucena', 'Cogon(Cebu)','Calbayog', 'Ormoc' ];
 
 	var len = data.length;
 
